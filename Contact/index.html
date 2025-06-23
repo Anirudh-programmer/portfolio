@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me</title>
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --glass: rgba(255, 255, 255, 0.05);
+      --text: #f1f5f9;
+      --accent: #38bdf8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 1rem;
+    }
+
+    .contact-section {
+      max-width: 1100px;
+      width: 100%;
+      padding: 2rem;
+      background: linear-gradient(145deg, #1e293b, #0f172a);
+      border-radius: 25px;
+      box-shadow: 0 0 30px var(--glass);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 2rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .contact-card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 1.5rem;
+      min-width: 240px;
+      flex: 1 1 200px;
+      max-width: 260px;
+      text-align: center;
+      transition: transform 0.4s ease, background 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 70%);
+      transform: rotate(25deg);
+      transition: opacity 0.3s ease;
+      z-index: 0;
+    }
+
+    .contact-card:hover {
+      background: #334155;
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    .contact-card i {
+      font-size: 2.4rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      z-index: 1;
+      position: relative;
+    }
+
+    .contact-card span {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #e2e8f0;
+      z-index: 1;
+      position: relative;
+    }
+
+    .contact-card a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      word-break: break-word;
+      z-index: 1;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .contact-card a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-section">
+    <div class="contact-card">
+      <i class='bx bxs-envelope'></i>
+      <span>Email</span>
+      <a href="mailto:your.email@example.com">anirudhsingh3019@gmail.com</a>
+    </div>
+
+    <div class="contact-card">
+      <i class='bx bxl-linkedin'></i>
+      <span>LinkedIn</span>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">https://www.linkedin.com/in/anirudh-kumar-singh/</a>
+    </div>
+
+    <div class="contact-card">
+      <i class='bx bxs-phone'></i>
+      <span>Phone</span>
+      <a href="tel:+911234567890">+91 7987262459</a>
+    </div>
+
+    <div class="contact-card">
+      <i class='bx bxl-github'></i>
+      <span>GitHub</span>
+      <a href="https://github.com/yourusername" target="_blank">https://github.com/Anirudh-programmer</a>
+    </div>
+  </div>
+</body>
+</html>

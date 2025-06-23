@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboards</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #ece9e6, #ffffff);
+      min-height: 100vh;
+      display: flex;
+      overflow-x: hidden;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 260px;
+      height: 100vh;
+      background: linear-gradient(to bottom, #1f4037, #99f2c8);
+      color: white;
+      box-shadow: 5px 0 20px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      font-size: 22px;
+      padding: 20px 0;
+      margin: 0;
+      background-color: rgba(0,0,0,0.1);
+    }
+
+    .sidebar button {
+      display: block;
+      width: 90%;
+      margin: 10px auto;
+      padding: 12px 18px;
+      background: #27ae60;
+      border: none;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      text-align: left;
+    }
+
+    .sidebar button:hover {
+      background: #2ecc71;
+      transform: translateX(5px);
+    }
+
+    .details {
+      flex: 1;
+      margin-left: 260px;
+      padding: 70px 50px;
+      background: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: margin-left 0.4s ease;
+    }
+
+    .project {
+      background: #ffffff;
+      border-left: 6px solid #27ae60;
+      border-radius: 12px;
+      padding: 40px 50px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+      max-width: 650px;
+      width: 100%;
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .project.active {
+      display: block;
+    }
+
+    .project .row {
+      margin-bottom: 20px;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
+
+    .label {
+      font-weight: 600;
+      margin-right: 10px;
+      color: #2c3e50;
+      min-width: 130px;
+    }
+
+    a {
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #1f618d;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Projects</h2>
+    <button onclick="showDetails('proj1')">Amazon Clothing Sales</button>
+    
+  </div>
+
+  <div class="details">
+    <div id="proj1" class="project">
+      <div class="row"><span class="label">Working Link:</span><a href="https://www.linkedin.com/posts/anirudh-kumar-singh_project-showcase-amazon-clothing-sales-activity-7314640112389083136-KNIQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEXuZ48B6wLuc92Dpxzkr9VAqJYSjIhceTk">Click Here</a></div>
+      <div class="row"><span class="label">Report:</span><a href="E:\portfolio-responsive-complete-main\Projects\DV\AmazonSales.pdf" download>Download PDF</a></div>
+    </div>
+
+    
+
+  </div>
+
+  <script>
+    function showDetails(id) {
+      const projects = document.querySelectorAll('.project');
+      projects.forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
